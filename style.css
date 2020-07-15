@@ -1,0 +1,357 @@
+:root {
+  --gasoline-color: #1A710F; 
+  --diesel-color: #000000; 
+  --gpl-color: #0031FF; 
+  --electric-color: #D1D12C; 
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E3E8EB;
+  font-family: 'Raleway', Helvetica, sans-serif;
+  padding:1em;
+  overflow: hidden;
+}
+@media(max-width:1200px){
+  body{
+    font-size: 12px;
+  }
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 2.5em;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.configurator-header {
+  display: flex;
+  align-items: center;
+  margin:0;
+}
+
+.title {
+  margin:0 1em;
+}
+
+.logo-500 {
+  mix-blend-mode: multiply;
+}
+
+.main {
+  display: flex;
+  width: 90vw;
+  height: 85vh;
+  margin: auto;
+}
+
+.car {
+  flex-basis: 70%;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.car-img {
+  height: 85%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  z-index: -1;
+}
+
+.car-info {
+  position: absolute;
+  bottom: 0;
+
+  height: 10em;
+}
+
+.car-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.car-info li {
+  display: flex;
+  align-items: center;
+}
+
+.car-info img {
+  width: 2.5em;
+  margin-right: 1em;
+  margin-top: .5em;
+}
+
+.car-info p{
+  margin: 0;
+}
+
+
+.car-img >* {
+  width: 100%;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
+.navbar {
+  flex-basis: 40%;
+  margin: auto;
+  overflow: scroll;
+  padding-bottom: 3em;
+}
+
+.navbar.open {
+  margin:0
+}
+
+.navbar::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar ul{
+  list-style: none;
+  padding: 0;
+}
+
+.navbar-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-basis: 100%;
+  margin: 2.5em 0;
+  background-color: transparent;
+  border: 0;
+  margin-bottom: 0;
+}
+
+.navbar li>button:focus {
+  outline: transparent;
+}
+
+
+.menu-item {
+  margin-left: 1em;
+}
+.arrow {
+  margin-left: auto;
+}
+
+.submenu {
+  margin-left: 6.25em;
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu-list {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.submenu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu-item>button {
+  width: 100px;
+  height: 100px;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right:1em;
+  margin-bottom:1em;
+  background-color: #FFF;
+  box-shadow: 0px 0px 6px 0px #000;
+  border-style: solid;
+}
+
+@media(max-width:1200px){
+  .submenu-item>button {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+
+.submenu-item p {
+  text-align: center;
+}
+
+/* GASOLINE BUTTON*/
+button.gasoline {
+  border-color: var(--gasoline-color);
+}
+.gasoline * {
+  fill: var(--gasoline-color);
+}
+button.gasoline:hover {
+  background-color:var(--gasoline-color);
+}
+.gasoline:hover *{
+  fill: #FFF;
+}
+button.gasoline.click{
+  background-color:var(--gasoline-color);
+}
+.gasoline.click *{
+  fill: #FFF;
+}
+
+/* DIESEL BUTTON*/
+button.diesel {
+  border-color: var(--diesel-color);
+}
+.diesel * {
+  fill: var(--diesel-color);
+}
+button.diesel:hover {
+  background-color:var(--diesel-color);
+}
+.diesel:hover *{
+  fill: #FFF;
+}
+button.diesel.click {
+  background-color:var(--diesel-color);
+}
+.diesel.click *{
+  fill: #FFF;
+}
+
+/* GPL BUTTON*/
+button.gpl {
+  border-color: var(--gpl-color);
+}
+.gpl *{
+  fill: var(--gpl-color);
+}
+button.gpl:hover {
+  background-color:var(--gpl-color);
+}
+.gpl:hover *{
+  fill: #FFF;
+}
+button.gpl.click {
+  background-color:var(--gpl-color);
+}
+.gpl.click *{
+  fill: #FFF;
+}
+
+/* ELECTRIC BUTTON*/
+button.electric {
+  border-color: var(--electric-color);
+}
+.electric * {
+  fill: var(--electric-color);
+}
+button.electric:hover {
+  background-color:var(--electric-color);
+}
+.electric:hover *{
+  fill: #FFF;
+}
+button.electric.click {
+  background-color:var(--electric-color);
+}
+.electric.click *{
+  fill: #FFF;
+}
+
+
+.fuel {
+  border: solid;
+}
+
+/* ENGINE BUTTON*/
+.engine {
+  border: solid;
+  flex-flow: column;
+  font-family: Verdana, 'Geneva', Tahoma, sans-serif;
+}
+.engine-weight {
+  font-size: 3em;
+  font-weight: 900;
+}
+.engine:hover {
+  background-color: #000;
+  color: #FFF;
+  border: #FFF;
+}
+.engine.click {
+  background-color: #000;
+  color: #FFF;
+  border: #FFF
+}
+
+/* DONE BUTTON*/
+.done {
+  width: 200px;
+  height: 50px;
+  margin-top: 1em;
+
+  text-transform: uppercase;
+  font-size: 2.5em;
+  font-weight: 500;
+  line-height: 1;
+  color: #FFF;
+
+  background: radial-gradient(#E71837, #8E1124);
+  border-radius: 10px;
+  align-self: flex-end;
+}
+.done:hover {
+  box-shadow: 0px 0px 6px 0px #8E1124;
+}
+
+@media(max-width:1200px){
+  .done {
+    width: 150px;
+    height: 37.5px;
+  }
+}
+
+
+/*MAIN COLORS BUTTON*/
+.icecream-white { background: linear-gradient(#DBDBD1,#FFF 60%,#DBDBD1) }
+.carrara-grey { background: linear-gradient(#545758,#FFF 60%,#545758) }
+.ice-white {  background: linear-gradient(#EFEFEF,#FFF 60%,#EFEFEF) }
+.star-white {  background: linear-gradient(#D2CBD0,#FFF 60%,#D2CBD0) }
+.blue-painted-blue {  background: linear-gradient(#1E484F,#FFF 60%,#1E484F) }
+.opera-bordeaux {  background: linear-gradient(#3F2327,#FFF 60%,#3F2327) }
+.colosseum-grey{  background: linear-gradient(#696A64,#FFF 60%,#696A64)}
+.pompei-grey{  background: linear-gradient(#999A97,#FFF 60%,#999A97) }
+.vesuvio-black{  background: linear-gradient(#0E0E0E,#FFF 60%,#0E0E0E) }
+
+/*WHEEL BUTTON*/
+.wheel {
+  overflow: hidden;
+  padding: 0;
+}
+.wheel img{
+  width: 100%;
+}
+
+.body .submenu-item>button.click,
+.interior .submenu-item>button.click {
+  box-shadow: 0px 0px 6px 0px #8E1124;
+  border: 3px solid #E71837;
+}
+
+.body .submenu-item>button:hover,
+.interior .submenu-item>button:hover {
+  box-shadow: 0px 0px 6px 0px #8E1124;
+  border: 2px solid #E71837;
+}
+
+.selected {
+  font-weight: 900;
+}
