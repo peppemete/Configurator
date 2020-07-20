@@ -22,27 +22,6 @@
         <img id="wheels-img" src="img/wheels/16-inch_Diamond-Anthracite.png" alt="Wheels">
         <img id="interiors-img" src="img/interiors/Ice-Tecnoprene_Blacks-inserts-in-Black-environment_Matt-Ice-plank.jpeg" alt="Interiors">
       </section>
-      <section id="car-info" class="car-info">
-        <ul>
-
-          <li id="engine-info">
-            <img src="img/svg/engine.svg" alt="engine logo">
-            <p ></p>
-          </li>
-
-          <li id="body-info">
-            <img src="img/svg/car.svg" alt="body car logo">
-            <p></p>
-          </li>
-
-          <li id="interiors-info">
-            <img src="img/svg/interior.svg" alt="interior logo">
-            <p ></p>
-          </li>
-          
-        </ul>
-
-      </section>
     </section>
     
     <section id="navbar" class="navbar">
@@ -62,11 +41,14 @@
               </svg>
             </button>
 
+            <div id="engine-info" class="submenu info"><p></p></div>
+
             <section class="submenu">
               <div id="fuel">
     
-                <p>select the fuel</p>
-                <ul id="listfuel" class="submenu-list">
+                <p class="selected">select the fuel</p>
+                <div class="wrapper">
+                  <ul id="listfuel" class="submenu-list">
                   
                   <li class="submenu-item">
 
@@ -117,13 +99,17 @@
                     <p>Electric</p>
                   </li>
                   
-                </ul>
+                  </ul>
+                </div>
+              </div>
               </div>
     
               <div id="engine">
     
-                <p>select the engine</p>
-                <ul class="submenu-list" id="gasoline-engines">
+                <p class="selected">select the engine</p>
+                
+                <div class="wrapper">
+                  <ul class="submenu-list" id="gasoline-engines">
                   
                   <li class="submenu-item">
                     <button id="10-70hp" class="engine">
@@ -146,9 +132,11 @@
                     </button>
                   </li>
                   
-                </ul>
+                  </ul>
+                </div>
 
-                <ul class="submenu-list" id="diesel-engines">
+                <div class="wrapper">
+                  <ul class="submenu-list" id="diesel-engines">
                   <li class="submenu-item">
                     <button id="13-75hp" class="engine">
                       <div class="engine-weight">1.3</div>
@@ -163,9 +151,11 @@
                     </button>
                   </li>
                   
-                </ul>
+                  </ul>
+                </div>
 
-                <ul class="submenu-list" id="gpl-engines">
+                <div class="wrapper">
+                  <ul class="submenu-list" id="gpl-engines">
                   
                   <li class="submenu-item">
                     <button id="12-69hp"class="engine">
@@ -174,9 +164,11 @@
                     </button>
                   </li>
         
-                </ul>
+                  </ul>
+                </div>
 
-                <ul class="submenu-list" id="electric-engines">
+                <div class="wrapper">
+                  <ul class="submenu-list" id="electric-engines">
                   
                   <li class="submenu-item">
                     <button id="43-118hp" class="engine">
@@ -185,7 +177,8 @@
                     </button>
                   </li>
         
-                </ul>
+                  </ul>
+                </div>
               </div>
     
               <button id="done-engine" class="done">
@@ -210,11 +203,13 @@
                 </g>
               </svg>
             </button>
+            <div id="body-info" class="submenu info"><p></p></div>
 
             <section class="submenu body">
               <div id="color">
     
                 <p class="selected">Color:  <span id="mainColor"></span></p>
+                <div id ="wrapper" class="wrapper">
                 <ul id="listcolor" class="submenu-list color">
                   
                   <li class="submenu-item">
@@ -255,12 +250,15 @@
                   
                   
                 </ul>
+                </div>
               </div>
-    
+              
+              
               <div id="wheels">
-    
+              
                 <p class="selected" >Wheels:  <span id="wheel"></span></p>
-                <ul id="listwheels" class="submenu-list">
+                <div class="wrapper">
+                  <ul id="listwheels" class="submenu-list">
                   
                   <li class="submenu-item">
                     <button id="16-inch_Diamond-Anthracite" class="wheel click">
@@ -282,7 +280,8 @@
                   
                   
                   
-                </ul>
+                  </ul>
+                </div>
               </div>
     
               <button id="done-body" class="done">
@@ -304,10 +303,12 @@
                 </g>
               </svg>
             </button>
+            <div id="interiors-info" class="submenu info" ><p></p></div>
 
             <section class="submenu interior">
               <div id="interiors">
                   <p class="selected" id="interiorselected"></p>
+                  <div id ="wrapper" class="wrapper">
                 <ul id="listinteriors" class="submenu-list">
                   
                   <li class="submenu-item">
@@ -344,6 +345,7 @@
                   
                 </ul>
               </div>
+              </div>
 
               <button id="done-interiors" class="done">
                 DONE
@@ -354,6 +356,7 @@
             </section>
           </li>
         </ul>
+
 
         
       </nav>
@@ -420,6 +423,7 @@
       $("#body-button").css("display","none");
       $("#interiors-button").css("display","none");
       $("#navbar").addClass("open");
+      $(".info").css("display","none");
       if(storefuel != ''){
         $("#engine").css("display","");
         $('#'+storefuel+'-engines').css("display","");
@@ -433,6 +437,7 @@
       $("#"+fuel+'-button').addClass("click");
       $('#'+storefuel+"-button").removeClass("click");
       $("#"+storefuel+"-engines").css("display","none");
+
       storefuel=fuel;
       $('#'+fuel+'-engines').css("display","");
     }
@@ -456,6 +461,7 @@
       $("#body-button").css("display","");
       $("#interiors-button").css("display","");
       $("#navbar").removeClass("open");
+      $(".info").css("display","");
       showinfo();
     }
 
@@ -472,6 +478,7 @@
       $("#wheels").css("display","");
       $("#done-body").css("display","");
       $("#navbar").addClass("open");
+      $(".info").css("display","none");
 
       if(storecolor==''){
         storecolor='Ice-Cream-White';
@@ -480,7 +487,7 @@
         storewheels='16-inch_Diamond-Anthracite'
       }
 
-      $("#mainColor").text(storecolor.replaceAll('-',' '));
+      $("#mainColor").text(storecolor.replace(/-/g,' '));
       $("#wheel").text(storewheels);
 
     }
@@ -491,7 +498,7 @@
       storecolor=btn.id;
       $("#"+storecolor).addClass("click");
       $("#car-img").attr("src","img/colors/"+storecolor+".jpeg");
-      $("#mainColor").text(storecolor.replaceAll('-',' '));
+      $("#mainColor").text(storecolor.replace(/-/g,' '));
     }
 
     //select wheels
@@ -500,7 +507,7 @@
       storewheels=btn.id;
       $("#"+storewheels).addClass("click");
       $("#wheels-img").attr("src","img/wheels/"+storewheels+".png");
-      $("#wheel").text(storewheels.replaceAll('-',' ').replaceAll('_',' - '));
+      $("#wheel").text(storewheels.replace(/-/g,' ').replace(/_/g,' - '));
     }
 
     //Body Done
@@ -511,7 +518,8 @@
       $("#wheels").css("display","none");
       $("#done-body").css("display","none");
       $("#navbar").removeClass("open");
-      body = storecolor.replaceAll('-',' ') + " - " + storewheels;
+      $(".info").css("display","");
+      body = storecolor.replace(/-/g,' ') + " - " + storewheels;
       showinfo();
     }
 
@@ -527,12 +535,13 @@
       $("#done-interiors").css("display","");
       $('#interiors-img').css("display","");
       $("#navbar").addClass("open");
+      $(".info").css("display","none");
       
       if(storeinteriors==''){
         storeinteriors='Ice-Tecnoprene_Blacks-inserts-in-Black-environment_Matt-Ice-plank';
       }
 
-      $("#interiorselected").html(storeinteriors.replaceAll('-',' ').split('_')[0]+"<br>"+storeinteriors.replaceAll('-',' ').split('_')[1]+"<br>"+storeinteriors.replaceAll('-',' ').split('_')[2]);
+      $("#interiorselected").html(storeinteriors.replace(/-/g,' ').split('_')[0]+"<br>"+storeinteriors.replace(/-/g,' ').split('_')[1]+"<br>"+storeinteriors.replace(/-/g,' ').split('_')[2]);
     }
 
     //select interior
@@ -541,7 +550,7 @@
       storeinteriors=btn.id;
       $("#"+storeinteriors).addClass("click");
       $('#interiors-img').attr("src","img/interiors/"+storeinteriors+".jpeg");
-      $("#interiorselected").html(storeinteriors.replaceAll('-',' ').split('_')[0]+"<br>"+storeinteriors.replaceAll('-',' ').split('_')[1]+"<br>"+storeinteriors.replaceAll('-',' ').split('_')[2]);
+      $("#interiorselected").html(storeinteriors.replace(/-/g,' ').split('_')[0]+"<br>"+storeinteriors.replace(/-/g,' ').split('_')[1]+"<br>"+storeinteriors.replace(/-/g,' ').split('_')[2]);
     }
     
     //done interior
@@ -553,7 +562,8 @@
       $("#done-interiors").css("display","none");
       $('#interiors-img').css("display","none");
       $("#navbar").removeClass("open");
-      interiors=storeinteriors.replaceAll('-',' ').replaceAll('_','-');
+      interiors=storeinteriors.replace(/-/g,' ').replace(/_/g,'-');
+      $(".info").css("display","");
       showinfo();
     }
     
@@ -562,7 +572,6 @@
   
 
     function showinfo(){
-      $("#car-info").css("display","");
       if(engine != ''){
         $('#engine-info').css("display","");
         $('#engine-info>p').text(engine);
