@@ -53,7 +53,7 @@ h2 {
     margin:0;
   }
   .configurator-header {
-    width: 90vw;
+    width: 100vw;
     height: 3em;
     justify-content: center;
     flex-wrap: wrap;
@@ -149,6 +149,9 @@ h2 {
   }
   .car>img{
     padding-top: 2em;
+  }
+  .car-img {
+    height: auto;
   }
 }
 
