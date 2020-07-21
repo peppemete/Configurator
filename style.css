@@ -74,9 +74,8 @@ h2 {
 
 .car {
   flex-basis: 70%;
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
-  
 }
 
 @media(max-width:720px){
@@ -94,11 +93,33 @@ h2 {
 }
 .car-img {
   height: 85%;
+  width: 100%;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   z-index: -1;
+  align-items: center;
+  justify-items: end;
+}
+
+.wheel-dx {
+  width: 7.6%;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  margin-right: 25.37%;
+  margin-bottom: -16.6%;
+}
+
+.wheel-sx {
+  width: 7.6%;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  margin-left: 28.22%;
+  margin-bottom: -16.6%;
+  justify-self: start;
 }
 
 .info * {
@@ -106,8 +127,16 @@ h2 {
 }
 
 
-.car-img >* {
+#car-img {
   width: 100%;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
+.car>img{
+  width: 100%;
+  align-self: flex-start;
+  margin:auto;
   grid-column: 1/-1;
   grid-row: 1/-1;
 }
@@ -117,6 +146,9 @@ h2 {
     margin: auto;
     padding-left: 5em;
     width: 80vw;
+  }
+  .car>img{
+    padding-top: 2em;
   }
 }
 
@@ -161,6 +193,8 @@ h2 {
 
 .menu-item {
   margin-left: 1em;
+  font-size: 2.5em;
+  text-transform: uppercase;
 }
 .arrow {
   margin-left: auto;
@@ -180,8 +214,14 @@ h2 {
 
   .navbar.open>nav>ul>li {
     margin: 0;
+    margin-top: 2em;
     margin-bottom: 2em;
   }
+
+  li:has(#interiors-button) {
+    padding-bottom: 2em;
+  }
+  
 
   .navbar-item img {
     width: 3em;
@@ -189,10 +229,11 @@ h2 {
 
   .navbar-item {
     margin-top: 0;
+    height: 6em;
   }
 
-  h2.menu-item{
-    margin-left: .5em;
+  span.menu-item{
+    margin-left: .4em;
   }
 }
 
@@ -232,6 +273,10 @@ h2 {
   .submenu-item>button {
     width: 60px;
     height: 60px;
+    margin: 1em;
+  }
+  .submenu-item>button:first-child {
+    margin-left: 0em;
   }
 }
 @media(max-width:720px){ 
@@ -367,6 +412,12 @@ button.electric.click {
   color: #FFF;
   border: #FFF
 }
+@media(max-width:720px){ 
+  .engine-weight {
+    font-size: 2em;
+    font-weight: 900;
+  }
+}
 
 /* DONE BUTTON*/
 .done {
@@ -375,10 +426,11 @@ button.electric.click {
   margin-top: 1em;
 
   text-transform: uppercase;
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 500;
   line-height: 1;
   color: #FFF;
+  margin-right: 2em;
 
   background: radial-gradient(#E71837, #8E1124);
   border-radius: 10px;
@@ -435,4 +487,5 @@ button.electric.click {
 .selected {
   font-weight: 500;
   margin: 0;
+  margin-bottom: 10px;
 }
