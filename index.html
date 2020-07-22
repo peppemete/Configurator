@@ -692,7 +692,7 @@
   //---END INTERIOR---//
 
     function rotate() {
-      if (!rotation){
+      if (!rotation && window.innerWidth>720){
         rotation=true;
         
         gsap.fromTo("#wheels-img-sx",{rotation:0},{rotation:360,duration:2.5});

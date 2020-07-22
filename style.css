@@ -144,7 +144,7 @@ h2 {
 @media(max-width:720px){
   .info{
     margin: auto;
-    padding-left: 5em;
+    padding-left: 50px;
     width: 80vw;
   }
   .car>img{
@@ -195,7 +195,7 @@ h2 {
 
 
 .menu-item {
-  margin-left: 1em;
+  margin-left: 34px;
   font-size: 2.5em;
   text-transform: uppercase;
 }
@@ -236,13 +236,13 @@ h2 {
   }
 
   span.menu-item{
-    margin-left: .4em;
+    margin-left: 11px;
   }
 }
 
 
 .submenu {
-  margin-left: 6.25em;
+  margin-left: 100px;
   display: flex;
   flex-direction: column;
 }
@@ -296,11 +296,11 @@ h2 {
 
   .wrapper {
     overflow: scroll;
-    padding-left: 5em;
+    padding-left: 50px;
   }
 
   .selected{
-    padding-left: 5em;
+    padding-left: 50px;
   }
 }
 
@@ -308,6 +308,7 @@ h2 {
 
 .submenu-item p {
   text-align: center;
+  margin-right: 1em;
 }
 
 /* GASOLINE BUTTON*/
